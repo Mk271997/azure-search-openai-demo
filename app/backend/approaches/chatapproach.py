@@ -21,18 +21,18 @@ class ChatApproach(Approach, ABC):
     ASSISTANT = "assistant"
 
     query_prompt_few_shots = [
-        {"role": USER, "content": "How did crypto do last year?"},
-        {"role": ASSISTANT, "content": "Summarize Cryptocurrency Market Dynamics from last year"},
-        {"role": USER, "content": "What are my health plans?"},
-        {"role": ASSISTANT, "content": "Show available health plans"},
+        {"role": USER, "content": "tell me about the board members of Mazars"},
+        {"role": ASSISTANT, "content": "Summarize the key fiancial metrics of the Mazars and it's performance compared to last year"},
+        {"role": USER, "content": "Tell me about the Mazars in UK?"},
+        {"role": ASSISTANT, "content": "What new things Mazars has done in 2022?"},
     ]
     NO_RESPONSE = "0"
 
     follow_up_questions_prompt_content = """Generate 3 very brief follow-up questions that the user would likely ask next.
     Enclose the follow-up questions in double angle brackets. Example:
-    <<Are there exclusions for prescriptions?>>
-    <<Which pharmacies can be ordered from?>>
-    <<What is the limit for over-the-counter medication?>>
+    <<What Board members had to say about Mazars?>>
+    <<Which countries Mazars in Present?>>
+    <<What's the overall profit sharing of Mazars in 2022?>>
     Do no repeat questions that have already been asked.
     Make sure the last question ends with ">>".
     """

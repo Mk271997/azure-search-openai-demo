@@ -74,18 +74,18 @@ def test_chat(page: Page, live_server_url: str):
     expect(page.get_by_role("button", name="Developer settings")).to_be_enabled()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. Tell in brief about the streamlined Energy and Carbon report?)").click()
+    page.get_by_placeholder("Type a new question (e.g. Tell me about Mazars consolidated statements of cashflows?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_role("button", name="Ask question button").click()
 
-    expect(page.get_by_text("Whats the dental plan?")).to_be_visible()
-    expect(page.get_by_text("The capital of France is Paris.")).to_be_visible()
+    expect(page.get_by_text("Whats the policy of Mazars?")).to_be_visible()
+    expect(page.get_by_text("Tell me about LLP statement of financial Position.")).to_be_visible()
     expect(page.get_by_role("button", name="Clear chat")).to_be_enabled()
 
     # Show the citation document
-    page.get_by_text("1. Benefit_Options-2.pdf").click()
+    page.get_by_text("1. DATA_POC.pdf").click()
     expect(page.get_by_role("tab", name="Citation")).to_be_visible()
     expect(page.get_by_title("Citation")).to_be_visible()
 
@@ -97,11 +97,11 @@ def test_chat(page: Page, live_server_url: str):
     # Show the supporting content
     page.get_by_label("Show supporting content").click()
     expect(page.get_by_title("Supporting content")).to_be_visible()
-    expect(page.get_by_role("heading", name="Benefit_Options-2.pdf")).to_be_visible()
+    expect(page.get_by_role("heading", name="DATA_POC.pdf")).to_be_visible()
 
     # Clear the chat
     page.get_by_role("button", name="Clear chat").click()
-    expect(page.get_by_text("Whats the dental plan?")).not_to_be_visible()
+    expect(page.get_by_text("Whats the internal Policy of Mazars?")).not_to_be_visible()
     expect(page.get_by_text("The capital of France is Paris.")).not_to_be_visible()
     expect(page.get_by_role("button", name="Clear chat")).to_be_disabled()
 
@@ -148,8 +148,8 @@ def test_chat_customization(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. what's the policy of Mazars?)").click()
+    page.get_by_placeholder("Type a new question (e.g. what's the policy of Mazars?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_role("button", name="Ask question button").click()
@@ -179,8 +179,8 @@ def test_chat_nonstreaming(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. what's the policy of Mazars?)").click()
+    page.get_by_placeholder("Type a new question (e.g. what's the policy of Mazars?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_label("Ask question button").click()
@@ -212,8 +212,8 @@ def test_chat_followup_streaming(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. what's the policy of Mazars?)").click()
+    page.get_by_placeholder("Type a new question (e.g. what's the policy of Mazars?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_label("Ask question button").click()
@@ -250,8 +250,8 @@ def test_chat_followup_nonstreaming(page: Page, live_server_url: str):
     page.locator("button").filter(has_text="Close").click()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
+    page.get_by_placeholder("Type a new question (e.g. what's the policy of Mazars?)").click()
+    page.get_by_placeholder("Type a new question (e.g. what's the policy of Mazars?)").fill(
         "Whats the dental plan?"
     )
     page.get_by_label("Ask question button").click()
@@ -284,9 +284,9 @@ def test_ask(page: Page, live_server_url: str):
     expect(page).to_have_title("GPT + Enterprise data | Sample")
 
     page.get_by_role("link", name="Ask a question").click()
-    page.get_by_placeholder("Example: Does my plan cover annual eye exams?").click()
-    page.get_by_placeholder("Example: Does my plan cover annual eye exams?").fill("Whats the dental plan?")
-    page.get_by_placeholder("Example: Does my plan cover annual eye exams?").click()
+    page.get_by_placeholder("Example: what's the policy of Mazars?").click()
+    page.get_by_placeholder("Example: what's the policy of Mazars?").fill("Whats the dental plan?")
+    page.get_by_placeholder("Example: what's the policy of Mazars?").click()
     page.get_by_label("Ask question button").click()
 
     expect(page.get_by_text("Whats the dental plan?")).to_be_visible()

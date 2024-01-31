@@ -24,19 +24,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-height: 1024px;
+    max-height: 400px;
     padding-top: 60px;
 }
 
 .chatEmptyStateTitle {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 30px;
 }
 
+/* @keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+} */
+.chatEmptyStateDescription {
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
 .chatEmptyStateSubtitle {
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 10px;
 }
 

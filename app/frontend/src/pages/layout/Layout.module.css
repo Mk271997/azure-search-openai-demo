@@ -5,8 +5,8 @@
 }
 
 .header {
-    background-color: #222222;
-    color: #f2f2f2;
+    background-color: #DBDBDB;
+    color: #222222;
 }
 
 .headerContainer {
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     margin-right: 40px;
-    color: #f2f2f2;
+    color: #222222;
     text-decoration: none;
 }
 
@@ -36,12 +36,13 @@
 
 .headerNavList {
     display: flex;
+    font-weight: 600;
     list-style: none;
     padding-left: 0;
 }
 
 .headerNavPageLink {
-    color: #f2f2f2;
+    color: #222222;
     text-decoration: none;
     opacity: 0.75;
 
@@ -55,16 +56,17 @@
 }
 
 .headerNavPageLinkActive {
-    color: #f2f2f2;
+    color: #222222;
     text-decoration: none;
 }
 
 .headerNavLeftMargin {
     margin-left: 20px;
+    font-weight: 600;
 }
 
 .headerRightText {
-    font-weight: normal;
+    font-weight: 600;
     margin-left: 40px;
 }
 

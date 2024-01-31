@@ -14,7 +14,10 @@ const Layout = () => {
             <header className={styles.header} role={"banner"}>
                 <div className={styles.headerContainer}>
                     <Link to="/" className={styles.headerTitleContainer}>
-                        <h3 className={styles.headerTitle}>GPT + Enterprise data | Sample</h3>
+                        <h3 className={styles.headerTitle}>Mazars Agent</h3>
+                        <a href="https://www.mazars.co.uk/" target={"_blank"} title="Mazars Webiste">
+                            <img src="https://i.ibb.co/Bjb7hxZ/favicon.png" alt="Mazars logo" width="50px" height="50px" />
+                        </a>
                     </Link>
                     <nav>
                         <ul className={styles.headerNavList}>
@@ -25,24 +28,15 @@ const Layout = () => {
                             </li>
                             <li className={styles.headerNavLeftMargin}>
                                 <NavLink to="/qa" className={({ isActive }) => (isActive ? styles.headerNavPageLinkActive : styles.headerNavPageLink)}>
-                                    Ask a question
+                                ┃    Ask a question
                                 </NavLink>
                             </li>
-                            <li className={styles.headerNavLeftMargin}>
-                                <a href="https://aka.ms/entgptsearch" target={"_blank"} title="Github repository link">
-                                    <img
-                                        src={github}
-                                        alt="Github logo"
-                                        aria-label="Link to github repository"
-                                        width="20px"
-                                        height="20px"
-                                        className={styles.githubLogo}
-                                    />
-                                </a>
-                            </li>
+                            {/* <li className={styles.headerNavLeftMargin}>
+              
+                            </li> */}
                         </ul>
                     </nav>
-                    <h4 className={styles.headerRightText}>Azure OpenAI + AI Search</h4>
+                    <h4 className={styles.headerRightText}>Powered by Innovation UK</h4>
                     {useLogin && <LoginButton />}
                 </div>
             </header>
